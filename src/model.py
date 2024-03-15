@@ -1,8 +1,9 @@
 import torch
 from torch import nn
-from torch.nn import Linear, Sequential, ReLU, LogSoftmax, MaxPool2d
+from torch.nn import Linear, Sequential, ReLU, LogSoftmax, MaxPool2d, Conv2d
 
 
+# from mpl_toolkits.mplot3d import Axes3D
 # 定义神经网络
 class Net(nn.Module):
 
@@ -36,8 +37,8 @@ class Net(nn.Module):
 """"""
 model = Net()
 print(model)
-Input = torch.ones((64, 3, 1, 784))  # batch_size = 64, channel = 3, row = 1, column = 784
+Input = torch.ones((64, 3, 1, 784))  # batch_size = 64, channel = 3, row = 1, columns = 784
 Output = model(Input)
-print(Output.shape)  # 如果网络参数正确, 输出torch.Size([15, 3, 1, 10])
+print(Output.shape)  # 如果网络参数正确, 输出torch.Size([(batch_size), 3, 1, 10])
 """
 """

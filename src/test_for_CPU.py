@@ -44,7 +44,6 @@ def main():
     # 设置超参数
     epoch = 2  # 训练轮次
     learning_rate = 1e-3  # 学习率 = 0.001
-    #
     # 设置优化方法———— Adaptive Momentum方法优化参数
     optimizer = Adam(net.parameters(), learning_rate)
     # 设置损失函数
@@ -78,7 +77,7 @@ def main():
                 break
             prediction = argmax(net.forward(img[0].view(-1, 28 * 28)))  # argmax选出预测概率最大的数字，即预测值
             plt.figure(n)  # 输出图像的数量
-            plt.imshow(img[0].view(28, 28))  # 转成 28 * 28 * 1 的张量输出
+            plt.imshow(img[0].view(28, 28))  # 转成 28 * 28 * 1 的 Tensor 输出
             plt.title("Prediction: " + str(int(prediction)))   # 图像上方显示预测结果
         plt.show()  # 画出图像
 

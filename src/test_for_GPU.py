@@ -39,7 +39,7 @@ def evaluate(test_data, net):
 
 def main():
     # 设置超参数
-    epoch = 10  # 训练轮次
+    epoch = 5  # 训练轮次
     learning_rate = 1e-3  # 学习率 = 0.001
 
     train_data = get_data_loader(is_train=True)  # 导入训练集
